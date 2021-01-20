@@ -1,4 +1,10 @@
 import React, { Component } from 'react';
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link
+  } from "react-router-dom";
 
 class Header extends Component {
     render() {
@@ -16,17 +22,25 @@ class Header extends Component {
             <nav className="navbar" role="navigation" aria-label="main navigation">
                 <div id="navbarBasicExample" className="navbar-menu">
                     <div className="navbar-start">
-                        <a class="navbar-item">
-                            Home
-                        </a>
+                        <Switch>
+                            <Route exact path="/home">
+                                <a class="navbar-item">
+                                    Home
+                                </a>
+                            </Route>
 
-                        <a className="navbar-item">
-                            About Me
-                        </a>
+                            <Route path="/about-me">
+                                <a class="navbar-item">
+                                    About Me
+                                </a>
+                            </Route>
 
-                        <a className="navbar-item">
-                            Projects
-                        </a>
+                            <Route path="/projects">
+                                <a class="navbar-item">
+                                    Projects
+                                </a>
+                            </Route>
+                        </Switch>
                     </div>
                 </div>
             </nav>
